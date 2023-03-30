@@ -1,6 +1,6 @@
 <h1 align="center"> The "Deflectere" Project 
 
-<img src='https://img.shields.io/badge/developer-Emrith-green' /> <img src='https://img.shields.io/badge/developer-Jutraim-green' />
+<img src='https://img.shields.io/badge/developer-Ermith-green' /> <img src='https://img.shields.io/badge/developer-Jutraim-green' />
 
 </h1> 
 
