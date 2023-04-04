@@ -2,6 +2,9 @@
 
 <img src='https://img.shields.io/badge/developer-Ermith-green' /> <img src='https://img.shields.io/badge/developer-Jutraim-green' />
 
+![esoeoslong2](https://user-images.githubusercontent.com/72628161/229930169-329ad550-fec5-4ad5-9ad6-013dcd740656.png)
+
+
 </h1> 
 
 <h4 align="center">
