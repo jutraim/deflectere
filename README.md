@@ -91,9 +91,16 @@ OUTDATED (NO FX)
 ---
 
 <details open>
-<summary><strong>Casting spells do not break weapon combos!</strong></summary>
+<summary><strong>Casting spells does not break weapon combos!</strong></summary>
 
 - Spellcasting can now be a part of your attack combos!
+
+- R1 (Light) after a spell cast executes 3rd light attack or greater.
+> **Example with attacks with straight sword (5 part light combo)**:
+> - spell 3 4 5 
+> - 1 2 spell 3 4 5
+> - 1 2 3 4 spell 5
+> - 1 spell 3 spell 4 spell 5 spell 3 spell 4 spell 5 spell 3 spell ...
 
 - R2 (Heavy) attacks close the distance similar to the aforementioned dodge attack.
 
