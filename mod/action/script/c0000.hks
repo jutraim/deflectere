@@ -20,25 +20,25 @@
 ------------------------------------------
 -- Wolf's Accord
 ------------------------------------------
-WA_SP_ANIMATION_CANCEL          = 6202023
-WA_SP_LIGHT_COUNTER_RIGHT_FX    = 6202024
-WA_SP_LIGHT_COUNTER_LEFT_FX     = 6202025
-WA_SP_PARTIAL_LEFT_FX           = 6202027
-WA_SP_PERFECT_LEFT_FX           = 6202028
-WA_SP_PARTIAL_RIGHT_FX          = 6202029
-WA_SP_PERFECT_RIGHT_FX          = 6202030
 WA_SP_DEFLECT_SMALL_SHIELD      = 6202002
-WA_SP_DEFLECT_MIDDLE_SHIELD     = 6202005
-WA_SP_DEFLECT_LARGE_SHIELD      = 6202008
-WA_SP_DEFLECT_SMALL_WEAPON      = 6202011
-WA_SP_DEFLECT_MIDDLE_WEAPON     = 6202014
-WA_SP_DEFLECT_LARGE_WEAPON      = 6202017
-WA_SP_DEFLECT_EXTRALARGE_WEAPON = 6202020
+WA_SP_DEFLECT_MIDDLE_SHIELD     = 6202004
+WA_SP_DEFLECT_LARGE_SHIELD      = 6202006
+WA_SP_DEFLECT_SMALL_WEAPON      = 6202008
+WA_SP_DEFLECT_MIDDLE_WEAPON     = 6202010
+WA_SP_DEFLECT_LARGE_WEAPON      = 6202012
+WA_SP_DEFLECT_EXTRALARGE_WEAPON = 6202014
+WA_SP_LIGHT_COUNTER_LEFT_FX     = 6202016
+WA_SP_LIGHT_COUNTER_RIGHT_FX    = 6202017
+WA_SP_PARTIAL_LEFT_FX           = 6202019
+WA_SP_PERFECT_LEFT_FX           = 6202020
+WA_SP_PARTIAL_RIGHT_FX          = 6202021
+WA_SP_PERFECT_RIGHT_FX          = 6202022
+WA_SP_ANIMATION_CANCEL          = 6202023
 WA_DEFLECT_TRIGGER = false
 
 function WA_DeflectIsPartial(deflectSpEffect)
     -- Deflection is active, but stamina reduction is not
-    if env(GetSpEffectID, deflectSpEffect) ~= FALSE and env(GetSpEffectID, deflectSpEffect + 2) == FALSE then
+    if env(GetSpEffectID, deflectSpEffect) ~= FALSE and env(GetSpEffectID, deflectSpEffect + 1) == FALSE then
         return TRUE
     end
 
@@ -62,15 +62,15 @@ end
 
 function WA_DeflectSpEffect(deflectSpEffect)
     act(AddSpEffect, deflectSpEffect + 0) -- Deflect
-    act(AddSpEffect, deflectSpEffect + 1) -- Deflect (Attacker Repel)
-    act(AddSpEffect, deflectSpEffect + 2) -- Deflect (Stamina Reduction)
+    act(AddSpEffect, deflectSpEffect + 1) -- Deflect Perfect (Stamina Reduction + Attack Repel)
+    --act(AddSpEffect, deflectSpEffect + 2) -- Deflect (Stamina Reduction)
     return
 end
 
 function WA_RemoveDeflectSpEffect(deflectSpEffect)
     act(Test_SpEffectDelete, deflectSpEffect + 0) -- Deflect
-    act(Test_SpEffectDelete, deflectSpEffect + 1) -- Deflect (Attacker Repel)
-    act(Test_SpEffectDelete, deflectSpEffect + 2) -- Deflect (Stamina Reduction)
+    act(Test_SpEffectDelete, deflectSpEffect + 1) -- Deflect Perfect (Stamina Reduction + Attack Repel)
+    --act(Test_SpEffectDelete, deflectSpEffect + 2) -- Deflect (Stamina Reduction)
 end
 
 function WA_WeaponIsSmall(kind)
