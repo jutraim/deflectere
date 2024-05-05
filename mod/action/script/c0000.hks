@@ -196,13 +196,10 @@ function WA_NextMagicR1(r1)
 
     elseif r1 == "W_AttackRightLight2" and IsEnableNextAttack(2, HAND_RIGHT) == TRUE then
         return "W_AttackRightLight3"
-
     elseif r1 == "W_AttackRightLight3" and IsEnableNextAttack(3, HAND_RIGHT) == TRUE then
         return "W_AttackRightLight4"
-        
     elseif r1 == "W_AttackRightLight4" and IsEnableNextAttack(4, HAND_RIGHT) == TRUE then
         return "W_AttackRightLight5"
-        
     elseif r1 == "W_AttackRightLight5" and IsEnableNextAttack(5, HAND_RIGHT) == TRUE then
         return "W_AttackRightLight6"
     else
@@ -3094,10 +3091,11 @@ function ExecComboMagic(magic_hand, blend_type)
         else
             return FALSE
         end
+     -- WA: Combo the other way?
     elseif env(GetSpEffectID, 100605) == TRUE then
         ExecEventHalfBlend(Event_MagicFireLeft2, blend_type)
         return TRUE
-    elseif env(GetSpEffectID, 100606) == TRUE then
+    elseif env(GetSpEffectID, 100606) == TRUE or not g_WA_magicR1 == "W_AttackRightLight1" then
         ExecEventHalfBlend(Event_MagicFireLeft3, blend_type)
         return TRUE
     else
